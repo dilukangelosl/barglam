@@ -1,0 +1,117 @@
+page-login {
+
+
+  #logo {
+    display: block;
+    margin: 0 auto;
+  }
+
+.forgotpassword {
+  margin-top: 10px;
+  padding: 5px;
+  text-align: center;
+}
+
+
+  .footersection {
+
+    padding: 10px;
+    text-align: center;
+
+
+    .footercolor {
+
+      color: #4d4d4d ;
+      margin-right: 2px;
+    }
+  }
+
+  .label-ios {
+    margin: 11px 6px 11px 4px;
+  }
+  .log{
+    padding: 0 .6em;
+    height: 40px !important;
+    border-radius: 4px !important;
+    font-size: 1.2rem;
+  }
+
+  .loginbtn {
+    width: 48%;
+  }
+  .list-md .item-block .item-inner{
+
+    border-bottom: 0;
+  }
+
+  .list-ios > .item-block:first-child {
+
+    border: none;
+  }
+
+
+  .list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+
+    border-bottom: 0;
+  }
+
+  .list-ios .item-block .item-inner{
+
+    border-bottom: none;
+
+  }
+
+
+  .input-md[clearInput] .text-input {
+    background: #fafafa;
+    border: 1px solid #ececec;
+    border-radius: 3px;
+    margin: 3px;
+    height: 40px;
+    padding: 5px;
+
+  }
+
+  .input-ios .text-input {
+
+    background: #fafafa;
+    border: 1px solid #ececec;
+    border-radius: 3px;
+    margin: 3px;
+    height: 40px;
+    padding: 5px;
+  }
+
+
+  .list-md .item-input.input-has-focus:last-child{
+    border:none;
+    box-shadow: none;
+  }
+  .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
+    border:none;
+    box-shadow: none;
+
+  }
+
+  .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child {
+    border:none;
+    box-shadow: none;
+  }
+
+
+  .list-md .item-input.input-has-focus .item-inner{
+    border:none;
+    box-shadow: none;
+  }
+
+  .kjdfkdjfinput{
+    width: 100%;
+    border: 1px solid #d6d6d6;
+    height: 35px;
+    border-radius: 3px;
+    padding: 5px;
+    background: #f1f1f1;
+    font-weight: 300;
+    color: #3a3a3a;
+  }
+}

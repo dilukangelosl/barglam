@@ -1,0 +1,67 @@
+<!--
+  Generated template for the Login page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+
+<ion-content padding has-bouncing="false" no-bounce>
+  <img src="assets/img/logo.png" width="200" id="logo" style="margin: 0 auto; display: block" />
+ <ion-list>
+   <!--
+
+ <ion-item>
+     <ion-label floating>Email</ion-label>
+     <ion-input type="text"  [(ngModel)] ="userEmail" ></ion-input>
+   </ion-item>
+
+   <ion-item>
+     <ion-label floating>Password</ion-label>
+     <ion-input type="password" [(ngModel)] ="userPassword" ></ion-input>
+   </ion-item>
+
+
+ -->
+
+
+
+
+   <ion-item>
+     <ion-input type="text"  [(ngModel)] ="userEmail" placeholder="Email" ></ion-input>
+   </ion-item>
+
+   <ion-item>
+     <ion-input  type="password" [(ngModel)] ="userPassword" placeholder="Password" ></ion-input>
+   </ion-item>
+
+
+   <ion-item>
+     <button ion-button color="glam" class="log" (click)="login()" full>Login</button>
+
+     <p class="forgotpassword" (tap)="openforgotpassword()" ><span class="footercolor" >Forgot your login details? </span> <span color="primary" >Reset password.</span></p>
+   </ion-item>
+
+
+
+ </ion-list>
+
+
+
+
+<!--
+  <ion-buttons>
+    <button ion-button color="primary" class="loginbtn " (click)="login()" >Login</button>
+    <button ion-button color="primary" class="loginbtn " outline (click)="register()" >Register</button>
+  </ion-buttons>
+
+-->
+</ion-content>
+
+
+<ion-footer>
+ <div class="footersection">
+  <button ion-button color="primary" clear (click)="register()"><span class="footercolor" >Don't have an Account ? </span> Sign up.</button>
+ </div>
+</ion-footer>

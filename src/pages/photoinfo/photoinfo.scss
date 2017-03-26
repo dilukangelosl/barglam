@@ -1,0 +1,336 @@
+page-photoinfo {
+  .headerbanner{
+    padding-top: 300px;
+    height: 350px;
+    width: 100%;
+    background: white;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .light {
+
+    font-weight: 300;
+  }
+
+  .page-makeupinfo .toolbar-title-md{
+    font-weight: 300 !important;
+
+  }
+
+  .myicon {
+
+    width: 22px;
+    height: 22px;
+    margin-left: 70%;
+
+
+  }
+
+
+
+  .ratingscontainer {
+
+    padding: 15px;
+    background: rgba(19, 19, 19, 0.60);
+    height: 50px;
+  }
+
+
+
+  ul {
+    padding: 0px;
+    margin: 0;
+    text-align: left;
+
+    &.rating li {
+      padding: 5px 1px !important;
+      background: none;
+      color: #E3000E;
+
+      ion-icon {
+        font-size: 15px;
+      }
+    }
+  }
+
+  ul.rating[_ngcontent-kde-23]   li[_ngcontent-kde-23] {
+    padding: 5px 1px !important;
+  }
+
+  .scroll-content {
+    padding: 0 !important;
+  }
+
+  .about h1 {
+    color: #ee4b95;
+    text-align: center;
+  }
+
+  .rv {
+    text-align: left !important;
+  }
+
+  .reviewcontainer {
+
+
+  }
+
+  .reviews {
+
+    h2 {
+      text-align: center;
+    }
+
+    p {
+      text-align: left;
+      color: #4d4d4d;
+    }
+  }
+  .line {
+    height: 1px;
+    width: 50%;
+    background: #b4b4b4;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 15px;
+  }
+
+
+
+  .about p {
+
+    text-align: center;
+  }
+
+  .toolbar-title-ios {
+
+  }
+
+  .toolbar-background-md {
+    font-weight:300 !important;
+  }
+
+
+  .lighter {
+
+    font-weight: 300;
+  }
+
+
+  .toolbar-title-md {
+    color: #d03c98;
+    font-weight:300 !important;
+  }
+
+  .back-button.show-back-button {
+    color: #d03c98 !important;
+  }
+
+  ion-title {
+    text-align: center !important;
+
+  }
+
+  .mybtn {
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+  }
+  .bridal {
+    background: #1abc9c;;
+  }
+
+  .itemtext {
+    color: #d03c98;
+    text-align: left;
+    font-weight: 100;
+  }
+
+
+  .itemtext {
+
+    float: left;
+  }
+
+  .clearfix {
+    clear: both;
+  }
+
+  .arrow-right {
+
+    background: url(../assets/icon/next.svg);
+    width: 20px;
+    height: 20px;
+    background-position: center;
+    background-size: contain;
+    float: right;
+  }
+
+
+
+
+  .toolbar-title-ios {
+    color: #d03c98;
+    text-transform: uppercase;
+    font-weight: 300 !important;
+  }
+  .commercial{
+    background: #f39c12;
+
+  }
+
+  .list-ios {
+    border-bottom:  0 ;
+  }
+
+  .list-md .item-block .item-inner {
+    border: none;
+  }
+
+  .list-ios > .item-block:first-child {
+    border: none;
+  }
+
+
+  .list-ios .item-block .item-inner {
+    border: none;
+  }
+  .list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+    border: none;
+  }
+
+  .fx {
+    background:#8e44ad;
+  }
+
+  .port {
+    height: 150px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .special{
+    background:#e74c3c;
+  }
+
+  .accordian {
+    color: #2d2d2d;
+    font-weight: 300;
+    text-align: left;
+  }
+
+
+  //segments
+
+  .segment-ios .segment-button:first-of-type {
+
+  }
+
+  .segment-ios .segment-button.segment-activated{
+
+
+    color: #ee4b95;
+    background-color: white;
+    border-radius: 0;
+
+    border-color: #ee4b95;
+    opacity: 1;
+
+    transition: 400ms all linear;
+
+  }
+
+  .toolbar-ios ion-title {
+    text-transform: uppercase;
+  }
+
+  .segment-md .segment-button {
+    transition: 400ms all linear;
+  }
+
+  .nopaddingright{
+
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .nopadding {
+    padding: 2px 0 2px 2px !important;
+  }
+
+  .card-md {
+    margin: 3px 3px 3px 3px;
+    width: calc(100% - 10px) !important;
+
+  }
+
+  .item-md.item-block .item-inner {
+    padding-right: 0 !important;
+  }
+
+  .card-content-md {
+    padding: 1px 1px 1px 1px;
+  }
+
+  .card-content-ios {
+    padding: 1px 1px 1px 1px;
+  }
+
+
+
+  .icon-holder{
+    padding-top: 1px;
+    float: right;
+    margin-left: 5px;
+    padding-top: 0;
+    clear: both;
+  }
+  .icon-holder ion-icon {
+    font-size: 1em;
+  }
+
+  .item-inner{
+    padding: 0;
+  }
+
+
+
+
+  .portimage{
+    height: 100%;
+    width: 100%;
+  }
+
+  .segment-ios .segment-button{
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding: 0 6px;
+    width: 0;
+    height: 4.2rem;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: rgba(0, 0, 0, 0.1);
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 4rem;
+    text-transform: uppercase;
+    color: #ee4b95;
+    background-color: transparent;
+    opacity: 0.7;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    transition: 100ms all linear;
+
+  }
+
+  .segment-button{
+
+
+  }
+}

@@ -1,0 +1,88 @@
+<!--
+  Generated template for the Myorders page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>My Bookings</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content  has-bouncing="false" no-bounce>
+
+
+  <div>
+    <ion-segment [(ngModel)]="bk">
+      <ion-segment-button value="current">
+        Current
+      </ion-segment-button>
+      <ion-segment-button value="prev">
+        Previous
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+
+
+  <div padding >
+    <div [ngSwitch]="bk">
+
+      <ion-list  *ngSwitchCase="'current'">
+        <div *ngFor="let booking of bookings | async" (click)="go(booking)"  style="margin-bottom: 8px;">
+          <ion-item *ngIf="booking.status == 'Rescheduled and pending' || booking.status == 'Pending' || booking.status == 'Confirmed' "  class="myborder" >
+            <ion-avatar item-left style="border-right: 1px solid #b5b2b2;">
+              <ion-icon ios="ios-calendar-outline" md="ios-calendar-outline" style="font-size: 2.8em;margin-right: 6px;"></ion-icon>
+            </ion-avatar>
+
+
+            <h2 class="captital" style="text-transform: capitalize"> {{booking.service[0].name}}</h2>
+          <!--  <p class="captial" *ngIf="booking.service.length > 1">& {{booking.service.length - 1}} More services..</p> -->
+            <p>With <span style="text-transform: capitalize;color:#ee4b95;">{{booking.name}}</span></p>
+            <p style="font-size:1rem;">  <ion-icon ios="md-calendar" md="md-calendar" style="margin-right: 1px;"></ion-icon> {{getDate(booking.date)}}    <ion-icon ios="md-clock" md="md-clock" style="margin-right: 1px;margin-left: 1px;"></ion-icon> {{getTime(booking.date)}}</p>
+            <p>{{booking.status}}</p>
+            <p>{{booking.message}}</p>
+
+
+            <ion-icon ios="md-home" md="md-home" item-right *ngIf="booking.homevisit"></ion-icon>
+          </ion-item>
+
+        </div>
+      </ion-list>
+
+
+      <ion-list *ngSwitchCase="'prev'">
+        <div *ngFor="let booking of bookings | async" (click)="go(booking)" style="margin-bottom: 8px;"  >
+
+          <ion-item *ngIf="booking.status == 'canceled by User' || booking.status == 'Completed'"  class="myborder">
+            <ion-avatar item-left style="border-right: 1px solid #b5b2b2;">
+              <ion-icon ios="ios-calendar-outline" md="ios-calendar-outline" style="font-size: 2.8em;margin-right: 6px;"></ion-icon>
+            </ion-avatar>
+
+
+            <h2 class="captital" style="text-transform: capitalize"> {{booking.service[0].name}}</h2>
+          <!--  <p class="captial" *ngIf="booking.service.length > 1">& {{booking.service.length - 1}} More services..</p> -->
+            <p>With <span style="text-transform: capitalize;color:#ee4b95;">{{booking.name}}</span></p>
+            <p style="font-size:1rem;">  <ion-icon ios="md-calendar" md="md-calendar" style="margin-right: 1px;"></ion-icon> {{getDate(booking.date)}}    <ion-icon ios="md-clock" md="md-clock" style="margin-right: 1px;margin-left: 1px;"></ion-icon> {{getTime(booking.date)}}</p>
+            <p>{{booking.status}}</p>
+            <ion-icon ios="md-home" md="md-home" item-right *ngIf="booking.homevisit"></ion-icon>
+          </ion-item>
+
+
+        </div>
+      </ion-list>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+</ion-content>

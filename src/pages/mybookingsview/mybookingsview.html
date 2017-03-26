@@ -1,0 +1,95 @@
+<!--
+  Generated template for the Mybookingsview page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>My Booking</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content  has-bouncing="false" no-bounce>
+
+  <ion-card >
+    <ion-card-header color="glam">
+     Booking with <span style="text-transform: capitalize">{{booking.name}}</span>
+    </ion-card-header>
+
+    <div style="padding: 5px;">
+      <ion-item *ngFor="let item of booking.service" style="    border: 1px solid #e8b1ca;margin-bottom: 5px;">
+        <h4>{{item.name}}</h4>
+        <p item-right>Rs {{item.price}}</p>
+
+      </ion-item>
+
+      <ion-item>
+        <ion-icon ios="md-home" md="md-home" item-left *ngIf="booking.homevisit"></ion-icon>
+
+        <p item-right="">Rs {{booking.makeup.homevisitcharge}}</p>
+      </ion-item>
+
+      <ion-item>
+        <h4>Estimated Total for {{booking.numberofcus}}</h4>
+
+        <p item-right>Rs {{total *booking.numberofcus}}</p>
+      </ion-item>
+
+    </div>
+
+    <ion-item>
+      <h1 style="text-align: center;"> <ion-icon ios="md-calendar" md="md-calendar"></ion-icon> {{getDate(booking.date)}}</h1>
+      <h1 style="text-align: center;"> <ion-icon ios="md-clock" md="md-clock"></ion-icon> {{getTime(booking.date)}}</h1>
+    </ion-item>
+
+
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header color="glam">
+     Booking Status
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <p style="text-align: left;"> <ion-icon ios="md-alert" md="md-alert"></ion-icon> {{booking.status}}</p>
+        <p style="text-align: left;"> <ion-icon ios="ios-chatbubbles" md="ios-chatbubbles"></ion-icon> {{booking.message}}</p>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+<!--
+  <ion-item>
+    <ion-label>Start Time</ion-label>
+    <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="booking.timeStarts"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Booking Date</ion-label>
+    <ion-datetime displayFormat="DD:MMM YYYY" pickerFormat="DD MMM YYYY" [(ngModel)]="booking.date"></ion-datetime>
+  </ion-item>
+
+
+
+  <ion-item>
+    <ion-label>Special Notes</ion-label>
+    <ion-textarea [(ngModel)]="booking.notes"></ion-textarea>
+  </ion-item>
+-->
+  <ion-row>
+    <ion-col>
+      <button ion-button full color="danger" (click)="cancelbooking()" *ngIf="showcancel"> Cancel Booking</button>
+    </ion-col>
+    <!--
+    <ion-col>
+      <button ion-button full color="glam" (click)="updatebooking()">Reschedule Booking</button>
+    </ion-col>
+    -->
+  </ion-row>
+
+
+
+</ion-content>

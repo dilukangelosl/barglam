@@ -1,0 +1,103 @@
+
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons left>
+      <button ion-button icon-only color="royal" (click)="toggle()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title><span class="glam">Glam</span><span class="bar">bar</span></ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only color="royal" (click)="gotocart()">
+        <ion-icon ios="ios-cart-outline" md="ios-cart-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="nopadding" padding="false">
+
+  <ion-slides #promoSlider [options]="homeOptions"  class="promoslider">
+    <ion-slide *ngFor="let promo of promos" [ngStyle]="{'background-image':  'url(' + promo.image + ')'}"  class="promoslide">
+
+    </ion-slide>
+
+  </ion-slides>
+
+  <div class="bannerpic">
+
+    <div class="line"></div>
+    <h3 color="glam" class="cattitle">Shop by Category</h3>
+
+  </div>
+
+
+  <ion-row wrap>
+
+    <ion-col width-33>
+      <button class="cat1 buttoncat" ion-button clear (click)="gotoCat(1,'Makeup')">
+
+      </button>
+      <p class="cattitle2 ">Makeup</p>
+    </ion-col>
+
+    <ion-col width-33>
+      <button class="cat2 buttoncat" ion-button clear (click)="gotoCat(2,'Skin Care')">
+
+      </button>
+      <p class="cattitle2">Skincare</p>
+    </ion-col>
+
+    <ion-col width-33>
+      <button class="cat3 buttoncat" ion-button clear (click)="gotoCat(3,'Bath & Body')">
+
+      </button>
+      <p class="cattitle2">Bath & Body</p>
+    </ion-col>
+
+
+    <ion-col width-33>
+      <button class="cat4 buttoncat" ion-button clear (click)="gotoCat(4,'Haircare')">
+
+      </button>
+      <p class="cattitle2">Haircare</p>
+    </ion-col>
+
+    <ion-col width-33>
+      <button class="cat5 buttoncat" ion-button clear (click)="gotoCat(5,'Nails')">
+
+      </button>
+      <p class="cattitle2">Nails</p>
+    </ion-col>
+
+    <ion-col width-33>
+      <button class="cat6 buttoncat" ion-button clear (click)="gotoCat(6,'More')">
+
+      </button>
+      <p class="cattitle2">Perfumes</p>
+    </ion-col>
+
+  </ion-row>
+
+<!--
+ <div  class="catback">
+
+   <div padding>
+     <ion-slides  [options]="_options" #mySlider class="myslider">
+       <ion-slide *ngFor="let testSlide of testSlides" class="productpadding">
+         <img src="https://s-media-cache-ak0.pinimg.com/236x/5d/0c/6d/5d0c6de8181fdaa4597ab441c1239cc4.jpg">
+         <p class="pp">Some Title</p>
+       </ion-slide>
+     </ion-slides>
+
+   </div>
+
+
+ </div>
+
+ -->
+
+
+</ion-content>

@@ -1,0 +1,283 @@
+<!--
+  Generated template for the Storeinfo page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title color="glam" class="light">{{makeup.name}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding has-bouncing="false" no-bounce>
+
+  <div class="headerbanner "[ngStyle]="{'background-image': 'url(' + makeup.image + ')'}">
+
+    <ion-row class="ratingscontainer">
+      <ion-col width-66 class="ratingcol">
+
+        <rating [(ngModel)]="ratings"></rating>
+      </ion-col>
+      <ion-col width-33 class="ratingcol">
+
+        <div class="hv-container" *ngIf="makeup.homevisit">
+          <img src="./assets/icon/home.png"  class="myicon">
+
+        </div>
+      </ion-col>
+    </ion-row>
+
+  </div>
+
+  <div padding class="nopaddingright">
+    <ion-segment [(ngModel)]="makeupsegment">
+      <ion-segment-button value="about">
+        About
+      </ion-segment-button>
+      <ion-segment-button value="services">
+        Services
+      </ion-segment-button>
+
+      <ion-segment-button value="portfolio">
+        Portfolio
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+
+
+  <div [ngSwitch]="makeupsegment">
+    <div  *ngSwitchCase="'about'" class="about h">
+
+      <p>{{makeup.description}}</p>
+      <!--
+            <ion-list>
+              <ion-item>
+                <ion-icon name="mail" item-left></ion-icon>
+                {{makeup.email}}
+
+              </ion-item>
+
+              <ion-item-sliding>
+                <ion-item>
+                  <ion-icon name="call" item-left></ion-icon>
+                  <ion-icon name="arrow-dropleft" item-right></ion-icon>
+                  {{makeup.phone}}
+
+                </ion-item>
+
+                <ion-item-options side="right">
+                  <button ion-button color="secondary">
+                    <ion-icon name="call"></ion-icon>
+                    Call
+                  </button>
+                </ion-item-options>
+
+
+              </ion-item-sliding>
+
+              <ion-item-sliding>
+                <ion-item>
+                  <ion-icon name="map" item-left></ion-icon>
+                  <ion-icon name="arrow-dropleft" item-right></ion-icon>
+                  {{makeup.address}}
+                </ion-item>
+
+                <ion-item-options side="right">
+                  <button ion-button color="secondary">
+                    <ion-icon name="compass"></ion-icon>
+                    Get Directions
+                  </button>
+                </ion-item-options>
+
+
+              </ion-item-sliding>
+
+
+            </ion-list>
+
+            -->
+
+      <div class="line">
+
+      </div>
+
+
+      <div class="reviews">
+        <h2 class="lighter" color="glam">Reviews</h2>
+
+
+        <div class="reviewcontainer">
+          <ion-card *ngFor="let item of reviews">
+            <ion-card-content style="padding: 3px;">
+              <h5>{{item.user}}</h5>
+              <rating [(ngModel)]="item.rating" readOnly="true"></rating>
+              <p class="rv">{{item.message}}</p>
+
+            </ion-card-content>
+          </ion-card>
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+    <div *ngSwitchCase="'services'" >
+
+      <!-- Another sectopm -->
+
+
+      <ion-list *ngIf= "showbridal">
+        <ion-item (click)="openclose(1)">
+          <h2 class="itemtext " >Events  <div class="icon-holder"><ion-icon ios="ios-arrow-forward-outline" md="ios-arrow-forward-outline" *ngIf="!a1"></ion-icon>  <ion-icon ios="ios-arrow-down-outline" md="ios-arrow-down-outline" *ngIf="a1"></ion-icon></div></h2>
+        </ion-item>
+
+        <div *ngIf="a1"  >
+
+          <ion-card *ngFor="let bride of bridal | async " (click)="book(bride,1)" class="nopadding">
+            <ion-card-content>
+              <ion-list>
+                <ion-item>
+                  <h2 >{{bride.name}}</h2>
+                  <p item-right>RS {{bride.price}}</p>
+                </ion-item>
+              </ion-list>
+            </ion-card-content>
+          </ion-card>
+
+
+
+
+        </div>
+      </ion-list>
+
+      <!-- end section -->
+
+
+      <!-- Another sectopm -->
+
+
+      <ion-list *ngIf= "showcommercial" >
+        <ion-item  (click)="openclose(2)">
+          <h2 class="itemtext"  >Fashion <div class="icon-holder"><ion-icon ios="ios-arrow-forward-outline" md="ios-arrow-forward-outline" *ngIf="!a2"></ion-icon>  <ion-icon ios="ios-arrow-down-outline" md="ios-arrow-down-outline" *ngIf="a2"></ion-icon></div></h2>
+        </ion-item>
+        <div *ngIf="a2"  class="nopadding">
+
+
+          <ion-card *ngFor="let item of commercial | async "  (click)="book(item,4)"  class="nopadding">
+            <ion-card-content>
+              <ion-list>
+                <ion-item>
+                  <h2 >{{item.name}}</h2>
+                  <p item-right>RS {{item.price}}</p>
+                </ion-item>
+              </ion-list>
+            </ion-card-content>
+          </ion-card>
+
+
+
+        </div>
+      </ion-list>
+
+      <!-- end section -->
+
+      <!-- Another sectopm -->
+
+
+      <ion-list *ngIf= "showspeialfx">
+        <ion-item  (click)="openclose(3)">
+          <h2 class="itemtext" >Wedding <div class="icon-holder"><ion-icon ios="ios-arrow-forward-outline" md="ios-arrow-forward-outline" *ngIf="!a3"></ion-icon>  <ion-icon ios="ios-arrow-down-outline" md="ios-arrow-down-outline" *ngIf="a3"></ion-icon></div> </h2>
+        </ion-item>
+        <div *ngIf="a3"  class="nopadding">
+
+
+          <ion-card  *ngFor="let item of specialfx | async "  (click)="book(item,3)"  class="nopadding">
+            <ion-card-content>
+              <ion-list>
+                <ion-item>
+                  <h2 >{{item.name}}</h2>
+                  <p item-right>RS {{item.price}}</p>
+                </ion-item>
+              </ion-list>
+            </ion-card-content>
+          </ion-card>
+
+
+        </div>
+      </ion-list>
+
+      <!-- end section -->
+
+
+
+      <!-- Another sectopm -->
+
+
+
+      <ion-list *ngIf= "showspecialoccations">
+        <ion-item  (click)="openclose(4)">
+          <h2 class="itemtext" >Special Occassions <div class="icon-holder"><ion-icon ios="ios-arrow-forward-outline" md="ios-arrow-forward-outline" *ngIf="!a4"></ion-icon>  <ion-icon ios="ios-arrow-down-outline" md="ios-arrow-down-outline" *ngIf="a4"></ion-icon></div> </h2>
+        </ion-item>
+
+        <div *ngIf="a4"  class="nopadding">
+
+          <ion-card  *ngFor="let item of specialoccations | async " (click)="book(item,2)"  class="nopadding">
+            <ion-card-content>
+              <ion-list>
+                <ion-item>
+                  <h2 >{{item.name}}</h2>
+                  <p item-right>RS {{item.price}}</p>
+                </ion-item>
+              </ion-list>
+            </ion-card-content>
+          </ion-card>
+
+
+
+        </div>
+
+      </ion-list>
+
+      <!-- end section -->
+
+
+
+
+    </div>
+
+
+    <div  *ngSwitchCase="'portfolio'" >
+
+      <ion-grid>
+        <ion-row wrap>
+          <ion-col width-50 *ngFor="let port of portfolio | async ">
+            <div class="port d" [ngStyle]="{'background-image': 'url(' + port.image + ')'} " (click)="openport(port.image)">
+              <img src="{{port.image}}" class="portimage" >
+            </div>
+
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </div>
+
+
+  </div>
+
+
+
+</ion-content>
+
+
+<ion-footer color="glam">
+  <ion-toolbar color="glam">
+    <ion-title class="lighter" (click)="book('',0)">BOOK ARTIST</ion-title>
+  </ion-toolbar>
+</ion-footer>

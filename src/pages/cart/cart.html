@@ -1,0 +1,73 @@
+<!--
+  Generated template for the Cart page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+
+  <ion-navbar >
+
+    <ion-title color="glam">
+      Cart
+    </ion-title>
+
+
+    <ion-buttons end>
+
+      <button ion-button icon-only color="glam" (click)="close()" >
+        <ion-icon ios="ios-arrow-down-outline" md="ios-arrow-down-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+
+
+  </ion-navbar>
+
+
+
+</ion-header>
+
+<ion-content padding has-bouncing="false" no-bounce>
+
+  <div *ngIf="sendingCart.length > 0">
+    <ion-list>
+
+      <ion-item  *ngFor="let item of sendingCart" >
+        <ion-thumbnail item-left>
+          <img src="{{item.slides[0].image}}" width="70">
+        </ion-thumbnail>
+        <h2>{{item.name}}</h2>
+        <h3>Rs {{item.newprice}}</h3>
+        <div>
+          <h4 *ngFor="let i of item.selectedOptions">
+            {{i.option}} | {{i.selection.name}}
+          </h4>
+        </div>
+        <h3> <button ion-button clear>QTY {{item.qty}}</button>    <button ion-button clear (click)="decrement(item)">-</button> <button ion-button clear (click)="increment(item)">+</button></h3>
+
+        <button ion-button clear item-right (click)="remove(item)">Remove</button>
+      </ion-item>
+
+
+
+    </ion-list>
+
+    <ion-buttons>
+    <!--  <button ion-button class="btn2 white" full (click)="clearcart()" >Clear Cart</button> -->
+      <button ion-button full (click)="requestOrder(cart)" color="glam" style="border:solid 1px;" clear>Request Order</button>
+    </ion-buttons>
+    <h2 style="text-align: right; color: #2d2d2d">Total : Rs {{ total }}</h2>
+  </div>
+
+
+
+
+
+
+ <div style="margin: 0 auto; display: block;color:#2d2d2d; text-align: center; margin-top: 50px;" *ngIf="sendingCart.length == 0">
+   <ion-icon ios="ios-cart-outline" md="ios-cart-outline"  style=" font-size: 8em;"></ion-icon>
+   <p>Your Cart is empty. Fill it up!</p>
+
+ </div>
+</ion-content>

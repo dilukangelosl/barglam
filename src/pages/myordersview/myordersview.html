@@ -1,0 +1,99 @@
+<!--
+  Generated template for the Myordersview page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+
+  <ion-navbar >
+
+    <ion-title color="glam">
+      My Order
+    </ion-title>
+
+
+    <ion-buttons end>
+
+      <button ion-button icon-only color="glam" (click)="close()" >
+        <ion-icon ios="ios-arrow-down-outline" md="ios-arrow-down-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+
+
+  </ion-navbar>
+
+
+
+</ion-header>
+
+
+<ion-content padding has-bouncing="false" no-bounce>
+
+  <ion-list>
+    <ion-list-header>Products</ion-list-header>
+
+    <ion-item *ngFor="let i of order.cart " >
+
+      <ion-avatar item-left>
+        <img src="{{i.image}}">
+      </ion-avatar>
+
+
+      <h2> {{i.name}}</h2>
+      <p>QTY {{i.qty}}</p>
+      <p item-right>Rs {{i.newprice * i.qty}}</p>
+    </ion-item>
+
+
+    <ion-list-header>Bill Details</ion-list-header>
+
+    <ion-item>
+      <h2 item-left>Ordered Date</h2>
+      <h2 item-right> {{order.orderDate}}</h2>
+    </ion-item>
+
+    <ion-item>
+      <h2 item-left>Sub Total</h2>
+      <h2 item-right>Rs {{order.orderDetails.subtotal}}</h2>
+    </ion-item>
+
+    <ion-item *ngIf="order.orderDetails.discount > 0">
+      <h2 item-left>Discount</h2>
+      <h2 item-right>Rs {{order.orderDetails.discount}}</h2>
+    </ion-item>
+
+    <ion-item>
+      <h2 item-left>Bill Amount</h2>
+      <h2 item-right>Rs {{order.orderDetails.total}}</h2>
+    </ion-item>
+
+
+    <ion-list-header>Shipping Details</ion-list-header>
+    <ion-item>
+      <h2 item-left>Address</h2>
+      <h2 item-right>Rs {{order.shippingDetails.shippingAddress.address}}</h2>
+    </ion-item>
+
+    <ion-item>
+      <h2 item-left>Method</h2>
+      <h2 item-right> {{order.shippingDetails.deliveryMethod.method}}</h2>
+    </ion-item>
+
+
+    <ion-list-header>Change Order Status</ion-list-header>
+    <ion-item>
+      <h2 item-left>Status</h2>
+      <h2 item-right> {{order.statusMessage}}</h2>
+    </ion-item>
+
+    <button ion-button full (click)="cancelorder(order) " *ngIf="order.statusCode == 0">Cancel Order</button>
+
+
+    <button ion-button full (click)="cancelorder(order) " *ngIf="order.statusCode != 0" disabled>Cancel Order</button>
+
+
+  </ion-list>
+
+</ion-content>

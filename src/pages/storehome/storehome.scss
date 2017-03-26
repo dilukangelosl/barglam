@@ -1,0 +1,132 @@
+page-storehome {
+
+  .myslider {
+    height: auto;
+  }
+
+  .pp {
+    font-size: 0.8em;
+  }
+
+
+  .scroll-content {
+
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-top:0 !important;
+  }
+
+
+
+
+
+
+
+.nopadding {
+
+  padding: 0;
+}
+
+  .bannerpic {
+    width: 100%;
+    height: 200px;
+    background: url("../assets/img/ncategory.jpg");
+    background-size: cover;
+    position: relative;
+
+  }
+
+
+
+
+  .promoslider {
+
+    height: 170px;
+  }
+
+  .cattitle {
+
+    text-align: center;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+  }
+
+  .catback {
+
+
+    background: #ee4b95;
+  }
+
+
+  .buttoncat {
+    height: 80px;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    width: 100%;
+  }
+
+  .cattitle2{
+
+    text-align: center;
+    color: #4c4c4c;
+    text-transform: uppercase;
+  }
+
+  .cat1 {
+
+    background: url('../assets/img/makeup.png');
+
+  }
+
+  .cat2 {
+
+    background: url('../assets/img/skincare.png');
+
+  }
+
+  .cat3 {
+
+    background: url('../assets/img/bath.png');
+
+  }
+
+  .cat4 {
+
+    background: url('../assets/img/hair.png');
+
+  }
+
+  .cat5 {
+
+    background: url('../assets/img/nails.png');
+
+  }
+
+  .cat6 {
+
+    background: url('../assets/img/perfume.png');
+
+  }
+
+
+  .productpadding {
+
+    margin: 2px;
+
+  }
+
+  .pp{
+    color: white;
+  }
+
+  .promoslide{
+    height: 170px;
+    width: 100%;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+  }
+}

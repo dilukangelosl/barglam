@@ -1,0 +1,102 @@
+<!--
+  Generated template for the Categoryproduct page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+
+  <ion-navbar >
+
+    <ion-title color="glam">
+      Item
+    </ion-title>
+
+
+    <ion-buttons end>
+
+      <button ion-button icon-only color="glam" (click)="openCart()" >
+        <ion-icon ios="ios-cart-outline" md="ios-cart-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+
+
+  </ion-navbar>
+
+
+
+</ion-header>
+
+
+<ion-content has-bouncing="false" no-bounce>
+  <ion-slides  class="promoslider" [options]="homeOptions">
+    <ion-slide *ngFor="let item of product.slides"  [ngStyle]="{'background-image':  'url(' + item.image + ')'}"  class="promoslide">
+
+
+    </ion-slide>
+
+  </ion-slides>
+
+  <div class="ntitle" padding>
+    {{product.name}}
+  </div>
+
+  <div class="price" padding style="margin-bottom: 10px;text-align: center">
+
+    Rs {{baseprice}}
+  </div>
+
+  <!--
+  <ion-list>
+    <ion-row *ngFor="let item of product.options  ; let y = index" [attr.data-index]="y" >
+
+
+        <ion-col width-33>
+         <ion-item class="fullitem">
+          {{item.name}}
+         </ion-item>
+        </ion-col>
+
+        <ion-col width-66>
+          <ion-item >
+            <ion-label>Color</ion-label>
+            <ion-select item-right [(ngModel)]="selectedoptions[product.options.indexOf(item)]" (ionChange)="choose(y,item.options,selectedoptions[product.options.indexOf(item)])" >
+
+              <ion-option *ngFor="let subitem of item.options ; let i = index" [attr.data-index]="i" value="{{i}}">{{subitem.name}} </ion-option>
+
+            </ion-select>
+          </ion-item>
+        </ion-col>
+
+
+
+
+
+
+    </ion-row>
+ </ion-list>
+-->
+    <ion-list >
+      <ion-item  *ngFor="let item of product.options; let i = index" (click)="openSelect(item, i)"  style="height:50px;">
+    <div padding>
+      <h4 item-left>{{item.name}}</h4>
+    </div>
+
+        <div item-right padding>
+          {{item.selected.name}}  <ion-icon ios="md-arrow-dropright" md="md-arrow-dropright" style="margin-left: 8px;"></ion-icon>
+        </div>
+
+      </ion-item>
+    </ion-list>
+
+
+
+  <div padding>
+    <button ion-button full  (click)="addToCart()" clear color="glam" style="border: 1px solid;">Add to Cart</button>
+    <button ion-button full  clear color="glam" style="border: 1px solid;">Buy Now</button>
+  </div>
+
+
+
+</ion-content>

@@ -1,0 +1,62 @@
+page-bookings {
+
+
+
+  .dontdisplay {
+
+    display: none;
+  }
+
+  .timebox {
+
+    height: 100%;
+    width: 100%;
+
+    border-right: 1px solid #444;
+  }
+
+
+  .space {
+
+    margin-top: 20px;
+  }
+
+
+  a[disabled], button[disabled], [ion-button][disabled] span div{
+
+    display: none;
+
+  }
+
+  .nocheck .alert-md .alert-checkbox-icon {
+
+    display: none;
+  }
+
+  .select-disabled, .item-select-disabled ion-label {
+    opacity: 1;
+  }
+
+
+  .grey {
+
+    color:#4d4d4d;
+  }
+
+  .datebox {
+
+
+    height: 100%;
+    width: 100%;
+  }
+
+  .center {
+
+    text-align: center;
+  }
+
+  .lightfont {
+
+    font-weight: 300;
+  }
+}

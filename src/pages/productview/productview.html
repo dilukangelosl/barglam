@@ -1,0 +1,84 @@
+<!--
+  Generated template for the Storeinfo page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="royal">
+
+    <ion-title>
+      View
+    </ion-title>
+
+
+    <ion-buttons end>
+      <button ion-button icon-only color="royal" (click)="gocart()">
+        <ion-icon name="cart"></ion-icon>
+      </button>
+    </ion-buttons>
+
+
+  </ion-navbar>
+
+</ion-header>
+
+
+
+  <ion-content padding has-bouncing="false" no-bounce>
+
+    <div class="productcontainer">
+
+      <div class="product" [ngStyle]="{'background-image': 'url(' + product.image + ')'}">
+
+      </div>
+
+    </div>
+
+    <div class="product-details">
+      <h2>{{product.name}}</h2>
+      <p>{{product.description}}</p>
+      <h2>Price : Rs {{product.sellingprice}}</h2>
+
+
+      <div *ngIf="product.sizes">
+        <h3>Sizes : {{product.sizes}}</h3>
+
+      </div>
+
+
+      <div *ngIf="product.colors">
+        <h3>Available Colors</h3>
+        <ion-row wrap>
+          <ion-col width-10 *ngFor="let i of product.colors" [ngStyle]="{background: i}" class="color"></ion-col>
+        </ion-row>
+        <div >
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons>
+      <button ion-button icon-left color="glam" class="btn" (click)="showaddtocart(product)">
+        <ion-icon name="add"></ion-icon>
+        Add to Cart
+      </button>
+
+      <button ion-button icon-left color="glamblue" class="btn" (click)="viewcart()">
+        <ion-icon name="card"></ion-icon>
+       Check out
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

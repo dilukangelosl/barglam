@@ -1,0 +1,33 @@
+page-productview {
+
+
+  .product {
+
+    height: 300px;
+    width: 200px;
+    background-size: cover ;
+    background-position: center;
+    display: block;
+    margin: 0 auto;
+    border: 2px solid #e8d9e8;
+  }
+
+  .product-details {
+    padding: 15px;
+    font-weight: 300;
+  }
+  .product-details h2 {
+    color: #2d2d2d;
+    text-transform: capitalize;
+  }
+
+  .color {
+    height: 30px;
+    width: 30px;
+    margin: 2px;
+  }
+  .btn {
+    width: 45%;
+    margin: 0 auto;
+  }
+}

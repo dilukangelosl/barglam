@@ -1,0 +1,85 @@
+
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons left>
+      <button ion-button icon-only color="royal" (click)="toggle()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title><span class="glam">Glam</span><span class="bar">bar</span></ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only color="royal" (click)="gotocart()">
+        <ion-icon ios="ios-cart-outline" md="ios-cart-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  >
+
+
+    <div *ngIf="show" >
+      <ion-item>
+        <ion-avatar item-left>
+          <img src="./assets/img/user.png" width="100">
+        </ion-avatar>
+
+        <h4>{{profile.name}}</h4>
+        <h4>{{profile.email}}</h4>
+        <h4>  <span *ngIf="emailverified">Verified User</span>  <span *ngIf="!emailverified">User Not Verified  <a  (click)="sendemail()">Re-send Email</a></span></h4>
+
+      </ion-item>
+
+
+      <ion-list>
+        <ion-item-divider>User Information</ion-item-divider>
+        <ion-item>
+          <ion-label color="primary" floating>Full Name</ion-label>
+          <ion-input [(ngModel)]="profile.name"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" floating>Email</ion-label>
+          <ion-input [(ngModel)]="profile.email"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" floating>Phone</ion-label>
+          <ion-input [(ngModel)]="profile.phone"></ion-input>
+        </ion-item>
+
+        <button ion-button (click)="saveProfile()" full clear>Save</button>
+
+
+        <ion-item-divider>Shipping Information</ion-item-divider>
+
+
+
+
+        <ion-item-sliding *ngFor="let item of address | async">
+          <ion-item>
+            <h2>{{item.address}}</h2>
+            <ion-icon ios="md-arrow-dropleft" md="md-arrow-dropleft" item-right></ion-icon>
+            <ion-icon ios="ios-navigate-outline" md="ios-navigate-outline" item-left *ngIf="item.$key == primaryaddresskey"></ion-icon>
+          </ion-item>
+
+          <ion-item-options side="right">
+            <button ion-button (click)="edit(item)" class="white">Edit</button>
+            <button ion-button (click)="remove(item)" class="white" color="danger" >Remove</button>
+            <button ion-button color="secondary" class="white" (click)="setDefault(item)">Set Primary</button>
+          </ion-item-options>
+        </ion-item-sliding>
+
+
+
+        <button ion-button  full clear  (click)="addAddress()" >Add Address</button>
+
+
+
+      </ion-list>
+
+    </div>
+
+</ion-content>

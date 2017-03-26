@@ -1,0 +1,63 @@
+<!--
+  Generated template for the Welcom page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons left>
+      <button ion-button icon-only color="royal" (click)="toggle()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title><span class="glam">Glam</span><span class="bar">bar</span></ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content padding  no-bounce >
+
+  <div class="myspinner"  *ngIf="!loaded"  [ngClass]="{'content-show': !loaded , 'content-hide': loaded}">
+    <ion-spinner name="bubbles"></ion-spinner>
+  </div>
+
+
+  <div *ngIf="loaded" class="content" [ngClass]="{'content-show': loaded , 'content-hide': !loaded}" >
+    <div class="welcome">
+      <h4 class="lightfont">{{greeting}}<span class="name">!</span> </h4>
+    </div>
+
+
+    <ion-row>
+      <ion-col>
+        <button  class="myicons" (click)="gotoBookings()">
+          <img src="./assets/img/booking2.png" width="65">
+          <h5 class="lightfont">Bookings</h5>
+        </button>
+      </ion-col>
+
+
+      <ion-col>
+        <button class="myicons" (click)="gotostore()">
+          <img src="./assets/img/store2.png" width="65">
+          <h5 class="lightfont">Store</h5>
+        </button>
+      </ion-col>
+
+    </ion-row>
+  </div>
+
+
+</ion-content>
+
+
+<ion-footer color="glam">
+  <ion-toolbar color="glam">
+    <button full clear ion-button class="lightfont" (click)="bookings()" style="color: white !important;">My Bookings</button>
+  </ion-toolbar>
+</ion-footer>

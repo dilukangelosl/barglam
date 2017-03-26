@@ -1,0 +1,42 @@
+
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons left>
+      <button ion-button icon-only color="royal" (click)="toggle()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title><span class="glam">Glam</span><span class="bar">bar</span></ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only color="royal" (click)="gotocart()">
+        <ion-icon ios="ios-cart-outline" md="ios-cart-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  has-bouncing="false" no-bounce>
+
+
+
+  <ion-searchbar [(ngModel)]="myInput"  [formControl]="searchControl" (ionInput)="onSearchInput()" autocomplete="on" animated="true"> </ion-searchbar>
+  <div *ngIf="searching" class="spinner-container">
+    <ion-spinner></ion-spinner>
+  </div>
+
+
+
+  <ion-list >
+    <ion-item  *ngFor="let item of products">
+      <ion-thumbnail item-left>
+        <ion-img src="{{item.slides[0].image}}" width="80" height="80"></ion-img>
+      </ion-thumbnail>
+      <h2>{{item.name}}</h2>
+      <p>Rs {{item.newprice}}</p>
+      <button ion-button clear item-right (click)="gotoProduct(item)">View</button>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

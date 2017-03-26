@@ -1,0 +1,147 @@
+<!--
+  Generated template for the Checkout page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+
+  <ion-navbar >
+
+    <ion-title color="glam">
+      Checkout
+    </ion-title>
+
+
+    <ion-buttons end>
+
+      <button ion-button icon-only color="glam" (click)="close()" >
+        <ion-icon ios="ios-arrow-down-outline" md="ios-arrow-down-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+
+
+  </ion-navbar>
+
+
+
+</ion-header>
+
+
+<ion-content padding has-bouncing="false" no-bounce>
+
+
+  <ion-row>
+    <ion-col width-25>
+      <div class="deliverto">
+        Deliver To
+      </div>
+    </ion-col>
+
+    <ion-col width-75>
+
+        <ion-row *ngFor="let item of addresses" (click)="selectAddress(item)">
+          <ion-col width-80>
+            <div >{{item.address}}</div>
+          </ion-col>
+
+          <ion-col width-20 >
+            <ion-icon name="checkmark" class="tick" *ngIf="item.selected"></ion-icon>
+          </ion-col>
+        </ion-row>
+
+      <button ion-button clear full>Add Address</button>
+
+
+    </ion-col>
+  </ion-row>
+
+
+
+
+  <ion-row>
+    <ion-col width-25>
+      <div class="deliverto">
+         Method
+      </div>
+    </ion-col>
+
+    <ion-col width-75>
+
+      <ion-row *ngFor="let item of methods" (click)="selectMethod(item)">
+        <ion-col width-80>
+          <div >{{item.method}}</div>
+        </ion-col>
+
+        <ion-col width-20>
+          <ion-icon name="checkmark" class="tick" *ngIf="item.selected"></ion-icon>
+        </ion-col>
+      </ion-row>
+
+
+
+
+    </ion-col>
+  </ion-row>
+
+
+
+  <!-- total -->
+
+
+  <ion-row class="sales">
+    <ion-col width-20>
+    </ion-col>
+
+    <ion-col width-80>
+
+      <ion-row >
+        <ion-col width-100 class="right">
+          <ion-item>
+            <ion-label color="primary">Subtotal</ion-label>
+            <ion-input  disabled value="{{subtotal}}"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+
+      <ion-row >
+
+
+        <ion-col width-100 class="right">
+          <ion-item>
+            <ion-label color="primary">Promo Code</ion-label>
+            <ion-input  [(ngModel)]="promocode"></ion-input>
+          </ion-item>
+
+          <button ion-button full (click)="validatePromo(promocode)">Validate Promo  <ion-spinner name="circles" class="spinn" color="light" *ngIf="promospinner"></ion-spinner></button>
+
+
+          <ion-item *ngIf="discount > 0">
+            <ion-label color="primary">Discount</ion-label>
+            <ion-input  [(ngModel)]="discount" disabled></ion-input>
+          </ion-item>
+
+
+          <ion-item>
+            <ion-label color="primary">Total</ion-label>
+            <ion-input  [(ngModel)]="total" disabled></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+    </ion-col>
+
+  </ion-row>
+
+
+
+</ion-content>
+
+
+<ion-footer color="glam">
+  <ion-toolbar color="glam">
+    <ion-title class="lightfont" (click)="order()" >Place Order</ion-title>
+  </ion-toolbar>
+</ion-footer>

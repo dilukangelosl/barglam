@@ -1,0 +1,94 @@
+
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons left>
+      <button ion-button icon-only color="royal" (click)="toggle()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title><span class="glam">Glam</span><span class="bar">bar</span></ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only color="royal" (click)="gotocart()">
+        <ion-icon ios="ios-cart-outline" md="ios-cart-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content has-bouncing="false" no-bounce >
+
+
+
+
+  <div >
+    <ion-segment [(ngModel)]="bk">
+      <ion-segment-button value="pending">
+        Pending
+      </ion-segment-button>
+      <ion-segment-button value="prev">
+        Completed
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+
+
+
+  <div [ngSwitch]="bk">
+
+
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content
+
+        pullingIcon="arrow-dropdown"
+        pullingText="Pull to refresh"
+        refreshingSpinner="crescent"
+        refreshingText="Getting your orders..">
+
+
+      </ion-refresher-content>
+    </ion-refresher>
+
+    <ion-list  *ngSwitchCase="'pending'" style="margin-top: 5px;">
+
+
+
+
+
+
+      <div *ngFor="let order of orders | reverse" (click)="viewOrder(order)"  style="margin-bottom: 8px;">
+
+
+       <div style="padding-right: 5px;padding-left: 5px;">
+         <ion-item  class="myborder" >
+           <ion-avatar item-left style="border-right: 1px solid #b5b2b2;">
+             <ion-icon ios="md-card" md="md-card" style="font-size: 2.8em;margin-right: 6px;"></ion-icon>
+           </ion-avatar>
+
+
+           <h2 class="captital" style="text-transform: capitalize">Order No : {{order.orderNo}}</h2>
+           <p class="captial">Rs {{order.orderDetails.total}}</p>
+
+           <p style="font-size:1rem;">  <ion-icon ios="md-calendar" md="md-calendar" style="margin-right: 1px;"></ion-icon> {{order.orderDate}} </p>
+           <p>{{order.statusMessage}}</p>
+
+
+
+         </ion-item>
+       </div>
+
+      </div>
+    </ion-list>
+
+
+  </div>
+
+
+
+
+
+
+
+</ion-content>

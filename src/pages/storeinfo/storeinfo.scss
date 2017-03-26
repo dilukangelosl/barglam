@@ -1,0 +1,45 @@
+page-storeinfo {
+
+
+  .headerbanner{
+
+    height: 350px;
+    width: 100%;
+    background: black;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .scroll-content {
+    padding: 0 !important;
+  }
+
+  .about h1 {
+    color: #2d2d2d;
+    text-align: center;
+  }
+  .about p {
+    color: rgba(45, 45, 45, 0.9);
+    text-align: center;
+  }
+
+  .toolbar-background-md {
+    background: #000000;
+  }
+
+
+  .toolbar-title-md {
+    color: #d03c98;
+  }
+
+  .back-button.show-back-button {
+    color: #d03c98 !important;
+  }
+
+  ion-title {
+    text-align: center !important;
+
+  }
+
+}

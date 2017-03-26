@@ -1,0 +1,98 @@
+<!--
+  Generated template for the Bookings page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>ALMOST DONE!</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding has-bouncing="false" no-bounce>
+
+  <ion-list>
+
+    <button (click)="showselect()" ion-button full>Select service  ({{selected.length}})</button>
+
+
+
+
+    <ion-row>
+
+      <ion-col width-50>
+
+          <ion-datetime displayFormat="h:mm A" pickerFormat="h:mm A" [(ngModel)]="event.timeStarts" #timebox class="dontdisplay"  (ionChange)="changetime(event.timeStarts)"></ion-datetime>
+
+
+        <div class="timebox" (click)="openTime(1)">
+            <p class="center grey">Booking Time</p>
+          <h3 class="center">{{displaytime.hours}} :{{displaytime.minutes}} </h3>
+          <p class="center grey">{{displaytime.ampm}}</p>
+        </div>
+
+      </ion-col>
+
+      <ion-col width-50>
+        <ion-datetime displayFormat="DD MMM" pickerFormat="DD MMM YYYY" [(ngModel)]="event.date"  min="2017" max="2028-10-31" #datebox class="dontdisplay" (ionChange)="changeDate(event.date)"  ></ion-datetime>
+        <div class="datebox" (click)="openDate()">
+          <p class="center grey">Booking Date</p>
+          <h3 class="center">{{displaydate.day}} </h3>
+          <p class="center grey">{{displaydate.month}}</p>
+        </div>
+
+        </ion-col>
+
+    </ion-row>
+
+
+
+
+
+    <ion-item class="space">
+      <ion-label>Number of People</ion-label>
+      <ion-select [(ngModel)]="event.numberofcus" >
+        <ion-option value="{{item.number}}"  *ngFor="let item of numberofcustomers">{{item.number}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label>Home Visit</ion-label>
+      <ion-toggle [(ngModel)]="event.homevisit"></ion-toggle>
+    </ion-item>
+
+
+
+    <ion-item>
+      <ion-label>Special Notes</ion-label>
+      <ion-textarea [(ngModel)]="event.notes"></ion-textarea>
+    </ion-item>
+
+  </ion-list>
+
+
+<!--
+  <button ion-button  (click)="openTime()">Open</button>
+
+  <button ion-button  (click)="d()">Native Date picker</button>
+
+
+  <button ion-button round full  (click)="requestbooking()"></button>
+
+  -->
+
+
+</ion-content>
+
+
+<ion-footer color="glam">
+  <ion-toolbar color="glam">
+    <ion-title class="lightfont center" (click)="requestbooking()">Request Booking</ion-title>
+  </ion-toolbar>
+</ion-footer>
+
